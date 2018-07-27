@@ -49,7 +49,8 @@ Compute has network and volume as db_relationships. I am using SQLite.
   $ python app_graphql.py
   ```
  
- * Simultaneously fetch the comupute (VM) object via both REST and GraphQL endpoints
+* Simultaneously fetch the comupute (VM) object via both REST and GraphQL endpoints.
+
   REST Endpoint
   ```
   http://localhost:5001/compute
