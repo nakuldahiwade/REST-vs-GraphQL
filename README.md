@@ -14,6 +14,7 @@ and how it enables frontend and backend teams to function independently.
 * Create Virtual Environment and activate
 
   ```
+  $ cd REST-vs-GraphQL/
   $ virtualenv .venv
   $ source .venv/bin/activate
   ```
@@ -35,12 +36,16 @@ Simple Infra/Cloud concept of a VM attached to Network and a Volume (Storage) at
 Compute has network and volume as db_relationships. I am using SQLite.
 
 * Start the REST api
+  On Current Terminal
   ```
   $ python app.py
   ```
 
 * Start the GraphQL api
+  On a new terminal
   ```
+  $ cd REST-vs-GraphQL/
+  $ source .venv/bin/activate
   $ python app_graphql.py
   ```
  
