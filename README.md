@@ -8,19 +8,20 @@ and how it enables frontend and backend teams to function independently.
 * Clone the repo
 
   ```
-  git clone https://github.com/nakuldahiwade/REST-vs-GraphQL.git
+  $ git clone https://github.com/nakuldahiwade/REST-vs-GraphQL.git
   ```
 
-* Create Virtual Environment.	
+* Create Virtual Environment and activate
 
   ```
-  virtualenv venv
+  $ virtualenv .venv
+  $ source .venv/bin/activate
   ```
   
 * Install requirements.txt.	
 
   ```
-  cd venv; pip install -r requirements.txt
+  $ pip install -r requirements.txt
   ```
 
 All set to perform the demo.
@@ -35,32 +36,32 @@ Compute has network and volume as db_relationships. I am using SQLite.
 
 * Start the REST api
   ```
-  python api.py
+  $ python app.py
   ```
 
 * Start the GraphQL api
   ```
-  python app_graphql.py
+  $ python app_graphql.py
   ```
  
  * Simultaneously fetch the comupute (VM) object via both REST and GraphQL endpoints
   REST Endpoint
   ```
-  localhost:5001/compute
+  http://localhost:5001/compute
   ```
   
   GraphQL Endpoint
   ```
-  localhost:5000/graphql
+  http://localhost:5000/graphql
   ```
 
 * To fetch the Network and Volume objects via REST we'll have to hit the respective endpoints
   ```
-  localhost:5001/network
+  http://localhost:5001/network
   ```
   
   ```
-  localhost:5001/volume
+  http://localhost:5001/volume
   ```
   
 * However to fetch the attached network and volume within the API call (using the db_relationships)
