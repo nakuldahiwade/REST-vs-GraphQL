@@ -38,10 +38,12 @@ def compute():
         db.session.add(vm)
         db.session.commit()
     if request.method == 'GET':
-
         result = models.Compute.query.first()
         compute_schema = models.ComputeSchema()
         output = compute_schema.dump(result).data
+        output['network_id'] = output.pop('network')
+        output['volume_id'] = output.pop('volume')
+        output.pop('id')
     return jsonify({'vm': output})
 
 
@@ -56,7 +58,7 @@ def network():
         result = models.Network.query.first()
         network_schema = models.NetworkSchema()
         output = network_schema.dump(result).data
-    return jsonify({'vm': output})
+    return jsonify({'net': output})
 
 
 @app.route("/volume", methods = ['GET', 'POST'])
@@ -70,7 +72,7 @@ def volume():
         result = models.Volume.query.first()
         volume_schema = models.VolumeSchema()
         output = volume_schema.dump(result).data
-    return jsonify({'vm': output})
+    return jsonify({'vol': output})
 
 
 if __name__ == "__main__":
